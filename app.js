@@ -16,6 +16,11 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(cors());
 app.use(express.json());
 
+// Test Route
+app.get("/", (req, res) => {
+  res.send("Backend Working 🚀");
+});
+
 app.use("/api/notes", require("./routes/noteRoutes"));
 
 const PORT = process.env.PORT || 3000;
